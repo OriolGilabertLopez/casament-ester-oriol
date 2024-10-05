@@ -8,8 +8,12 @@
 </head>
 <body>
 
-    <!-- Secció de Benvinguda -->
+    <!-- Secció de Benvinguda amb vídeo -->
     <section class="hero">
+        <video autoplay muted loop class="video-background">
+            <source src="video-de-fons.mp4" type="video/mp4">
+            El teu navegador no suporta vídeos.
+        </video>
         <div class="hero-text">
             <h1>Ester & Oriol</h1>
             <p>Ens casem!</p>
@@ -39,15 +43,14 @@
         <p>Ens vam conèixer fa 11 anys a la biblioteca de Sabadell. Des de llavors, hem viscut molts moments inoblidables junts i ara estem a punt de començar aquest nou capítol com a marit i muller.</p>
     </section>
 
-
-<script>
-    document.querySelector('.scroll-down').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#detalls').scrollIntoView({
-            behavior: 'smooth'
+    <script>
+        document.querySelector('.scroll-down').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#detalls').scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-    });
-</script>
+    </script>
     
 </body>
 </html>
