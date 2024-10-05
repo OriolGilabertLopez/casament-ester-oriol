@@ -116,3 +116,8 @@ body {
         margin: 20px 0;
     }
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
