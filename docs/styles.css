@@ -43,7 +43,7 @@ body {
 .hero-text h1 {
     font-size: 64px;
     color: #fff;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */  /* Puedes eliminar o cambiar esta línea */
 }
 
 .hero-text p {
