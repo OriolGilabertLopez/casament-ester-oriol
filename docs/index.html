@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda d'Ester i Oriol</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Menú horitzontal superior -->
-    <nav class="menu-superior">
-        <ul>
-            <li><a href="#programa">Programa de la Boda</a></li>
-            <li><a href="#menu">Menú</a></li>
-            <li><a href="#rsvp">Confirmació (RSVP)</a></li>
-            <li><a href="#alojament">Alojaments i Transport</a></li>
-        </ul>
-    </nav>
 
     <!-- Secció de Benvinguda amb vídeo -->
     <section class="hero">
@@ -53,38 +43,7 @@
         <p>Ens vam conèixer fa 11 anys a la biblioteca de Sabadell. Des de llavors, hem viscut molts moments inoblidables junts i ara estem a punt de començar aquest nou capítol com a marit i muller.</p>
     </section>
 
-    <!-- Secció del programa de la boda -->
-    <section id="programa" class="programa">
-        <h2>Programa de la Boda</h2>
-        <p>10:00h - Benvinguda</p>
-        <p>12:00h - Cerimònia</p>
-        <p>14:00h - Dinar</p>
-        <p>17:00h - Ball i festa</p>
-    </section>
-
-    <!-- Secció del menú -->
-    <section id="menu">
-        <h2>Menú del Casament</h2>
-        <p>Primer plat: Carpaccio de tomàquet amb formatge fresc.</p>
-        <p>Segon plat: Filet de vedella amb puré de patates.</p>
-        <p>Postres: Pastís de xocolata amb maduixes fresques.</p>
-    </section>
-
-    <!-- Secció de RSVP -->
-    <section id="rsvp">
-        <h2>Confirmació d'Assistència (RSVP)</h2>
-        <iframe src="https://docs.google.com/forms/d/tu-formulari-embed" width="100%" height="600px" frameborder="0">Loading…</iframe>
-    </section>
-
-    <!-- Secció d'Alojaments -->
-    <section id="alojament">
-        <h2>Alojaments i Transport</h2>
-        <p>Hotel X, a 10 minuts del lloc de la cerimònia.</p>
-        <p>Possibilitats de transport privat disponibles.</p>
-    </section>
-
     <script>
-        // Scroll suau per la fletxa de benvinguda
         document.querySelector('.scroll-down').addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector('#detalls').scrollIntoView({
