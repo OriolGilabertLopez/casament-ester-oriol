@@ -39,5 +39,15 @@
         <p>Ens vam conèixer fa 11 anys a la biblioteca de Sabadell. Des de llavors, hem viscut molts moments inoblidables junts i ara estem a punt de començar aquest nou capítol com a marit i muller.</p>
     </section>
 
+
+<script>
+    document.querySelector('.scroll-down').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#detalls').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+</script>
+    
 </body>
 </html>
