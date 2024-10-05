@@ -12,6 +12,60 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Estil del menú hamburguesa */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+}
+
+/* Estil del menú desplegable */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Mostrar el menú quan està obert */
+.menu.open {
+    right: 0;
+}
+
 /* Estils per a la secció de benvinguda (hero) amb vídeo */
 .hero {
     position: relative;
@@ -26,12 +80,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* El vídeo està darrere del text */
+    z-index: -1;
 }
 
 .hero-text {
     position: relative;
-    z-index: 1; /* El text està sobre el vídeo */
+    z-index: 1;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -43,7 +97,6 @@ body {
 .hero-text h1 {
     font-size: 64px;
     color: #fff;
-    /* font-family: 'Dancing Script', cursive; */  /* Puedes eliminar o cambiar esta línea */
 }
 
 .hero-text p {
@@ -116,7 +169,6 @@ body {
         margin: 20px 0;
     }
 }
-
 
 html {
     scroll-behavior: smooth;
