@@ -1,22 +1,52 @@
-/* Reseteig bàsic */
-* {
+/* Estil del menú horitzontal superior */
+.menu-superior {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-superior ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centrem els elements */
 }
 
-/* Tipografia i colors */
+.menu-superior li {
+    margin: 0 20px;
+}
+
+.menu-superior a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-superior a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Ajustem el marge superior per a que no es solapi amb el contingut */
 body {
-    font-family: 'Georgia', serif;
-    color: #555;
-    background-color: #f9f9f9;
+    margin-top: 60px; /* Aquest valor pot variar segons l'alçada del menú */
 }
 
-/* Estils per a la secció de benvinguda (hero) amb vídeo */
+/* Estils per a la secció de benvinguda */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .video-background {
@@ -57,65 +87,4 @@ body {
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* Secció de detalls */
-.detalls {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.detall-item {
-    flex: 1;
-    text-align: center;
-    margin: 0 20px;
-}
-
-.detall-item h2 {
-    font-size: 32px;
-    color: #8b7b5b;
-}
-
-.detall-item p {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #666;
-}
-
-/* Secció d'història */
-.historia {
-    padding: 40px;
-    text-align: center;
-    background-color: #f3efe4;
-}
-
-.historia h2 {
-    font-size: 36px;
-    color: #8b7b5b;
-    margin-bottom: 20px;
-}
-
-.historia p {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Responsivitat bàsica */
-@media (max-width: 768px) {
-    .detalls {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .detall-item {
-        margin: 20px 0;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
 }
