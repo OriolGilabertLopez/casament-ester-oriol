@@ -12,22 +12,38 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Estils per a la secció de benvinguda (hero) */
+/* Estils per a la secció de benvinguda (hero) amb vídeo */
 .hero {
+    position: relative;
     height: 100vh;
-    background-image: url('tu-imagen-de-fondo.jpg'); /* Assegura't que la imatge estigui aquí */
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* El vídeo està darrere del text */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1; /* El text està sobre el vídeo */
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .hero-text h1 {
     font-size: 64px;
     color: #fff;
-    font-family: 'Dancing Script', cursive; /* Tipografia estil "cursiva" */
+    font-family: 'Dancing Script', cursive;
 }
 
 .hero-text p {
@@ -48,15 +64,21 @@ body {
 .detalls {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     padding: 40px 0;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.detall-item {
+    flex: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
 .detall-item h2 {
     font-size: 32px;
-    color: #8b7b5b; /* Tono daurat/obscur */
+    color: #8b7b5b;
 }
 
 .detall-item p {
