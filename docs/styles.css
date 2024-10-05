@@ -1,21 +1,21 @@
-/* Reseteo básico */
+/* Reseteig bàsic */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Tipografía y colores */
+/* Tipografia i colors */
 body {
     font-family: 'Georgia', serif;
     color: #555;
     background-color: #f9f9f9;
 }
 
-/* Estilos para la sección de bienvenida (hero) */
+/* Estils per a la secció de benvinguda (hero) */
 .hero {
     height: 100vh;
-    background-image: url('tu-imagen-de-fondo.jpg'); /* Aquí pon tu imagen */
+    background-image: url('tu-imagen-de-fondo.jpg'); /* Assegura't que la imatge estigui aquí */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -27,7 +27,7 @@ body {
 .hero-text h1 {
     font-size: 64px;
     color: #fff;
-    font-family: 'Cursive', sans-serif;
+    font-family: 'Dancing Script', cursive; /* Tipografia estil "cursiva" */
 }
 
 .hero-text p {
@@ -41,37 +41,56 @@ body {
     color: #fff;
     margin-top: 20px;
     text-decoration: none;
+    cursor: pointer;
 }
 
-/* Estilos para la sección de detalles */
-.details {
+/* Estils per a la secció de detalls */
+.detalls {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 40px 0;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.detail-item h2 {
+.detall-item h2 {
     font-size: 32px;
-    color: #8b7b5b; /* Tono dorado/oscuro */
+    color: #8b7b5b; /* Tono daurat/obscur */
 }
 
-.detail-item p {
+.detall-item p {
     font-size: 18px;
     margin-top: 10px;
     color: #666;
 }
 
-/* Responsividad básica */
+/* Secció d'història */
+.historia {
+    padding: 40px;
+    text-align: center;
+    background-color: #f3efe4;
+}
+
+.historia h2 {
+    font-size: 36px;
+    color: #8b7b5b;
+    margin-bottom: 20px;
+}
+
+.historia p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Responsivitat bàsica */
 @media (max-width: 768px) {
-    .details {
+    .detalls {
         flex-direction: column;
         padding: 20px;
     }
 
-    .detail-item {
+    .detall-item {
         margin: 20px 0;
     }
 }
