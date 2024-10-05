@@ -1,40 +1,77 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía y colores */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+    font-family: 'Georgia', serif;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para la sección de bienvenida (hero) */
+.hero {
+    height: 100vh;
+    background-image: url('tu-imagen-de-fondo.jpg'); /* Aquí pon tu imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-header {
-    background-color: #ffcbcb;
-    padding: 50px 0;
+.hero-text h1 {
+    font-size: 64px;
+    color: #fff;
+    font-family: 'Cursive', sans-serif;
 }
 
-h1 {
-    font-size: 48px;
-    color: #6b4f4f;
+.hero-text p {
+    font-size: 24px;
+    color: #fff;
+    margin: 10px 0;
 }
 
-section {
-    margin: 20px 0;
+.scroll-down {
+    font-size: 32px;
+    color: #fff;
+    margin-top: 20px;
+    text-decoration: none;
 }
 
-#nuestra-historia, #detalles-del-evento, #rsvp {
-    padding: 20px;
+/* Estilos para la sección de detalles */
+.details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
     background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-button {
-    background-color: #ffcbcb;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.detail-item h2 {
+    font-size: 32px;
+    color: #8b7b5b; /* Tono dorado/oscuro */
 }
 
-button:hover {
-    background-color: #ffa1a1;
+.detail-item p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Responsividad básica */
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .detail-item {
+        margin: 20px 0;
+    }
 }
