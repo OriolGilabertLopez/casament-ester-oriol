@@ -14,13 +14,14 @@ body {
 
 /* Estil del menú horitzontal superior */
 .menu-superior {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 1); /* Color inicial sòlid */
     position: fixed; /* Manté el menú fixat a la part superior */
     top: 0;
     left: 0;
     width: 100%; /* Ocupa tota l'amplada de la pàgina */
     z-index: 999; /* Assegura que el menú estigui per sobre d'altres elements */
     padding: 10px 0;
+    transition: background-color 0.3s ease; /* Transició suau quan canviï l'opacitat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra subtil per diferenciar el menú del contingut */
 }
 
@@ -102,7 +103,7 @@ body {
     cursor: pointer;
 }
 
-/* Estils per a la secció de detalls */
+/* Secció de Detalls */
 .detalls {
     display: flex;
     justify-content: space-around;
@@ -148,8 +149,16 @@ body {
     color: #555;
 }
 
-/* Responsivitat bàsica */
+/* Responsivitat per a dispositius mòbils */
 @media (max-width: 768px) {
+    .menu-superior ul {
+        flex-direction: column; /* El menú es fa vertical en pantalles petites */
+    }
+
+    .menu-superior li {
+        margin: 10px 0; /* Espai entre elements quan és vertical */
+    }
+
     .detalls {
         flex-direction: column;
         padding: 20px;
