@@ -64,12 +64,12 @@
     </section>
 
     <!-- Secció del Menú -->
-    <section id="menu">
+    <section id="menu" class="menu">
         <h2>Menú del Casament</h2>
         <p>Primer plat: Carpaccio de tomàquet amb formatge fresc.</p>
         <p>Segon plat: Filet de vedella amb puré de patates.</p>
         <p>Postres: Pastís de xocolata amb maduixes fresques.</p>
-    </section> 
+    </section>
 
     <!-- Secció d'Allotjament i Transport -->
     <section id="allotjament" class="allotjament">
@@ -85,6 +85,16 @@
             document.querySelector('#detalls').scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+
+        // Canviar l'opacitat del menú quan es fa scroll
+        window.addEventListener('scroll', function() {
+            var menu = document.querySelector('.menu-superior');
+            if (window.scrollY > 50) {
+                menu.style.backgroundColor = 'rgba(51, 51, 51, 0.8)';
+            } else {
+                menu.style.backgroundColor = 'rgba(51, 51, 51, 1)';
+            }
         });
     </script>
     
