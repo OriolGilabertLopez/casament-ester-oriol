@@ -14,28 +14,29 @@ body {
 
 /* Estil del menú horitzontal superior */
 .menu-superior {
-    background-color: rgba(51, 51, 51, 1); /* Color inicial sòlid */
-    position: fixed; /* Manté el menú fixat a la part superior */
+    background-color: rgba(51, 51, 51, 1);
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ocupa tota l'amplada de la pàgina */
-    z-index: 999; /* Assegura que el menú estigui per sobre d'altres elements */
+    width: 100%;
+    z-index: 999;
     padding: 10px 0;
-    transition: background-color 0.3s ease; /* Transició suau quan canviï l'opacitat */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra subtil per diferenciar el menú del contingut */
-    margin-bottom: 0; /* Evitar qualsevol marge sota el menú */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
 }
 
+/* Estil del menú en mode desktop */
 .menu-superior ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Alineació horitzontal dels elements */
-    justify-content: center; /* Centrem els elements del menú */
+    display: flex;
+    justify-content: center;
 }
 
 .menu-superior li {
-    margin: 0 20px; /* Espai entre els elements del menú */
+    margin: 0 20px;
 }
 
 .menu-superior a {
@@ -44,7 +45,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     padding: 10px;
-    transition: background-color 0.3s ease; /* Transició suau en passar el ratolí */
+    transition: background-color 0.3s ease;
 }
 
 .menu-superior a:hover {
@@ -52,18 +53,57 @@ body {
     border-radius: 5px;
 }
 
-/* Ajustem el marge superior perquè el contingut no quedi tapat pel menú fix */
-body {
-    margin-top: 60px; /* El valor ha de ser igual a l'alçada del menú */
+/* Menú hamburguesa per a mòbils */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-/* Estils per a la secció de benvinguda (hero) amb vídeo */
+/* Estil per a mòbils */
+@media (max-width: 768px) {
+    .menu-superior ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    /* Mostra el menú quan es faci clic */
+    .menu-superior ul.mostrar {
+        display: flex;
+    }
+
+    .menu-superior li {
+        margin: 10px 0;
+    }
+
+    /* Mostra el menú hamburguesa */
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    /* Ajusta el marge superior perquè el menú fix no tapi el contingut */
+    body {
+        margin-top: 60px;
+    }
+}
+
+/* Secció de Benvinguda (hero) */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    margin-top: 0; /* Evitar qualsevol marge superior */
-    padding-top: 0; /* Eliminar qualsevol padding addicional */
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .video-background {
@@ -73,12 +113,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* El vídeo està darrere del text */
+    z-index: -1;
 }
 
 .hero-text {
     position: relative;
-    z-index: 1; /* El text està sobre el vídeo */
+    z-index: 1;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -170,20 +210,21 @@ body {
 /* Responsivitat per a dispositius mòbils */
 @media (max-width: 768px) {
     .menu-superior ul {
-        flex-direction: column; /* El menú es fa vertical en pantalles petites */
-    }
-
-    .menu-superior li {
-        margin: 10px 0; /* Espai entre elements quan és vertical */
-    }
-
-    .detalls {
         flex-direction: column;
-        padding: 20px;
+        width: 100%;
+        display: none;
     }
 
-    .detall-item {
-        margin: 20px 0;
+    .menu-superior ul.mostrar {
+        display: flex;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    body {
+        margin-top: 60px;
     }
 }
 
