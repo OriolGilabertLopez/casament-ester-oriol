@@ -5,52 +5,65 @@
     box-sizing: border-box;
 }
 
-/* Tipografia i colors */
+/* Tipografia moderna i colors vius */
 body {
-    font-family: 'Georgia', serif;
-    color: #555;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
     background-color: #f9f9f9;
+    line-height: 1.6;
 }
 
-/* Estil del menú horitzontal superior */
+/* Menú horitzontal superior */
 .menu-superior {
-    background-color: rgba(51, 51, 51, 1);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 10px 0;
+    padding: 20px 0;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Estil del menú en mode desktop */
+.menu-superior.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.menu-superior .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
 .menu-superior ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .menu-superior li {
-    margin: 0 20px;
+    margin: 0 30px;
 }
 
 .menu-superior a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
     transition: background-color 0.3s ease;
 }
 
 .menu-superior a:hover {
-    background-color: #555;
-    border-radius: 5px;
+    background-color: #ff4081;
+    border-radius: 50px;
 }
 
 /* Menú hamburguesa per a mòbils */
@@ -65,19 +78,18 @@ body {
     right: 10px;
 }
 
-/* Estil per a mòbils */
 @media (max-width: 768px) {
     .menu-superior ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: rgba(51, 51, 51, 0.9);
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         left: 0;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
-    /* Mostra el menú quan es faci clic */
     .menu-superior ul.mostrar {
         display: flex;
     }
@@ -86,12 +98,10 @@ body {
         margin: 10px 0;
     }
 
-    /* Mostra el menú hamburguesa */
     .menu-hamburguesa {
         display: block;
     }
 
-    /* Ajusta el marge superior perquè el menú fix no tapi el contingut */
     body {
         margin-top: 60px;
     }
@@ -101,9 +111,16 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    overflow: hidden;
-    margin-top: 0;
-    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-image: url('el-teu-video-o-imatge-de-fons.jpg');
+    background-attachment: fixed; /* Això crea l'efecte parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video-background {
@@ -117,115 +134,156 @@ body {
 }
 
 .hero-text {
-    position: relative;
     z-index: 1;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
 }
 
 .hero-text h1 {
-    font-size: 64px;
-    color: #fff;
+    font-size: 72px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.hero-text h1 span {
+    color: #ff4081;
 }
 
 .hero-text p {
     font-size: 24px;
-    color: #fff;
-    margin: 10px 0;
+    margin-top: 10px;
+    font-weight: 300;
 }
 
 .scroll-down {
     font-size: 32px;
-    color: #fff;
-    margin-top: 20px;
-    text-decoration: none;
+    color: #ff4081;
+    margin-top: 30px;
     cursor: pointer;
+}
+
+/* Secció de Compte Enrere */
+.countdown {
+    background-color: #f0f0f0;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.countdown h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#countdown-timer div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    text-align: center;
+}
+
+#countdown-timer div span {
+    font-size: 36px;
+    color: #ff4081;
+    display: block;
+    font-weight: 600;
+}
+
+#countdown-timer div p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    #countdown-timer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #countdown-timer div {
+        width: auto;
+    }
 }
 
 /* Secció de Detalls */
 .detalls {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px 0;
+    padding: 60px 0;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .detall-item {
-    flex: 1;
     text-align: center;
-    margin: 0 20px;
+    width: 30%;
 }
 
 .detall-item h2 {
-    font-size: 32px;
-    color: #8b7b5b;
+    font-size: 28px;
+    color: #ff4081;
 }
 
 .detall-item p {
     font-size: 18px;
-    margin-top: 10px;
-    color: #666;
+    color: #333;
 }
 
-/* Secció d'història */
-.historia, .programa, .menu, .allotjament, .rsvp {
+/* Secció d'Història */
+.historia,
+.programa,
+.menu,
+.allotjament,
+.rsvp {
     padding: 40px;
     text-align: center;
-    background-color: #f3efe4;
+    background-color: #f0f0f0;
     margin-bottom: 20px;
 }
 
-.historia h2, .programa h2, .menu h2, .allotjament h2, .rsvp h2 {
+.historia h2,
+.programa h2,
+.menu h2,
+.allotjament h2,
+.rsvp h2 {
     font-size: 36px;
-    color: #8b7b5b;
+    color: #ff4081;
     margin-bottom: 20px;
 }
 
-.historia p, .programa p, .menu p, .allotjament p, .rsvp p {
+.historia p,
+.programa p,
+.menu p,
+.allotjament p,
+.rsvp p {
     font-size: 18px;
     color: #555;
 }
 
+/* RSVP Button */
 .rsvp-link {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #8b7b5b;
+    padding: 12px 30px;
+    background-color: #ff4081;
     color: #fff;
+    font-size: 18px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: background-color 0.3s ease;
 }
 
 .rsvp-link:hover {
-    background-color: #7a6a4b;
-}
-
-/* Responsivitat per a dispositius mòbils */
-@media (max-width: 768px) {
-    .menu-superior ul {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-    }
-
-    .menu-superior ul.mostrar {
-        display: flex;
-    }
-
-    .menu-hamburguesa {
-        display: block;
-    }
-
-    body {
-        margin-top: 60px;
-    }
+    background-color: #ff6699;
 }
 
 html {
