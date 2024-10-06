@@ -1,18 +1,47 @@
-/* Reseteig bàsic */
-* {
+/* Estil del menú horitzontal superior */
+.menu-superior {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-superior ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex; /* Alineació horitzontal */
+    justify-content: center; /* Centrar els elements del menú */
 }
 
-/* Tipografia i colors */
+.menu-superior li {
+    margin: 0 20px; /* Espai entre els elements */
+}
+
+.menu-superior a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-superior a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Ajustem el marge superior per evitar que el menú fix tapés el contingut */
 body {
-    font-family: 'Georgia', serif;
-    color: #555;
-    background-color: #f9f9f9;
+    margin-top: 60px; /* Ajusta aquest valor segons l'alçada del menú */
 }
 
-/* Estils per a la secció de benvinguda (hero) amb vídeo */
+/* Estils per a la secció de benvinguda (hero) */
 .hero {
     position: relative;
     height: 100vh;
@@ -26,12 +55,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* El vídeo està darrere del text */
+    z-index: -1;
 }
 
 .hero-text {
     position: relative;
-    z-index: 1; /* El text està sobre el vídeo */
+    z-index: 1;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -43,7 +72,6 @@ body {
 .hero-text h1 {
     font-size: 64px;
     color: #fff;
-    /* font-family: 'Dancing Script', cursive; */  /* Puedes eliminar o cambiar esta línea */
 }
 
 .hero-text p {
@@ -59,66 +87,3 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-
-/* Estils per a la secció de detalls */
-.detalls {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.detall-item {
-    flex: 1;
-    text-align: center;
-    margin: 0 20px;
-}
-
-.detall-item h2 {
-    font-size: 32px;
-    color: #8b7b5b;
-}
-
-.detall-item p {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #666;
-}
-
-/* Secció d'història */
-.historia {
-    padding: 40px;
-    text-align: center;
-    background-color: #f3efe4;
-}
-
-.historia h2 {
-    font-size: 36px;
-    color: #8b7b5b;
-    margin-bottom: 20px;
-}
-
-.historia p {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Responsivitat bàsica */
-@media (max-width: 768px) {
-    .detalls {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .detall-item {
-        margin: 20px 0;
-    }
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
