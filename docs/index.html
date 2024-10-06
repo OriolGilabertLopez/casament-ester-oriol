@@ -8,15 +8,16 @@
 </head>
 <body>
 
-    <!-- Menú horitzontal superior -->
+    <!-- Menú horitzontal superior amb menú hamburguesa -->
     <nav class="menu-superior">
-        <ul>
+        <div class="menu-hamburguesa" id="menu-hamburguesa">&#9776;</div> <!-- Menú hamburguesa -->
+        <ul id="menu-links">
             <li><a href="#detalls">Detalls</a></li>
             <li><a href="#historia">Història</a></li>
             <li><a href="#programa">Programa</a></li>
             <li><a href="#menu">Menú del casament</a></li>
             <li><a href="#allotjament">Allotjament i Transport</a></li>
-            <li><a href="#rsvp">Confirmació d'Assistència</a></li> <!-- Nou enllaç al menú -->
+            <li><a href="#rsvp">Confirmació d'Assistència</a></li>
         </ul>
     </nav>
 
@@ -103,6 +104,14 @@
             } else {
                 menu.style.backgroundColor = 'rgba(51, 51, 51, 1)';
             }
+        });
+
+        // Mostra i amaga el menú en mòbils
+        const menuHamburguesa = document.getElementById("menu-hamburguesa");
+        const menuLinks = document.getElementById("menu-links");
+
+        menuHamburguesa.addEventListener('click', function() {
+            menuLinks.classList.toggle("mostrar");
         });
     </script>
     
