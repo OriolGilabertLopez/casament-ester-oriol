@@ -1,25 +1,39 @@
+/* Reseteig bàsic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografia i colors */
+body {
+    font-family: 'Georgia', serif;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
 /* Estil del menú horitzontal superior */
 .menu-superior {
     background-color: #333;
-    position: fixed;
-    width: 100%;
+    position: fixed; /* Manté el menú fixat a la part superior */
     top: 0;
     left: 0;
-    z-index: 999;
+    width: 100%; /* Ocupa tota l'amplada de la pàgina */
+    z-index: 999; /* Assegura que el menú estigui per sobre d'altres elements */
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra subtil per diferenciar el menú del contingut */
 }
 
 .menu-superior ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Alineació horitzontal */
-    justify-content: center; /* Centrar els elements del menú */
+    display: flex; /* Alineació horitzontal dels elements */
+    justify-content: center; /* Centrem els elements del menú */
 }
 
 .menu-superior li {
-    margin: 0 20px; /* Espai entre els elements */
+    margin: 0 20px; /* Espai entre els elements del menú */
 }
 
 .menu-superior a {
@@ -28,7 +42,7 @@
     font-size: 18px;
     font-weight: bold;
     padding: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Transició suau en passar el ratolí */
 }
 
 .menu-superior a:hover {
@@ -36,12 +50,12 @@
     border-radius: 5px;
 }
 
-/* Ajustem el marge superior per evitar que el menú fix tapés el contingut */
+/* Ajustem el marge superior perquè el contingut no quedi tapat pel menú fix */
 body {
-    margin-top: 60px; /* Ajusta aquest valor segons l'alçada del menú */
+    margin-top: 60px; /* El valor ha de ser igual a l'alçada del menú */
 }
 
-/* Estils per a la secció de benvinguda (hero) */
+/* Estils per a la secció de benvinguda (hero) amb vídeo */
 .hero {
     position: relative;
     height: 100vh;
@@ -55,12 +69,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -1; /* El vídeo està darrere del text */
 }
 
 .hero-text {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* El text està sobre el vídeo */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -86,4 +100,66 @@ body {
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Estils per a la secció de detalls */
+.detalls {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detall-item {
+    flex: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.detall-item h2 {
+    font-size: 32px;
+    color: #8b7b5b;
+}
+
+.detall-item p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Secció d'història */
+.historia, .programa, .menu, .allotjament {
+    padding: 40px;
+    text-align: center;
+    background-color: #f3efe4;
+    margin-bottom: 20px;
+}
+
+.historia h2, .programa h2, .menu h2, .allotjament h2 {
+    font-size: 36px;
+    color: #8b7b5b;
+    margin-bottom: 20px;
+}
+
+.historia p, .programa p, .menu p, .allotjament p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Responsivitat bàsica */
+@media (max-width: 768px) {
+    .detalls {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .detall-item {
+        margin: 20px 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }
