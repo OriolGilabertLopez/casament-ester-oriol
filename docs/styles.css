@@ -103,11 +103,11 @@ body {
     }
 
     body {
-        margin-top: 60px;
+        margin-top: 0;
     }
 }
 
-/* Secció de Benvinguda (hero) */
+/* Hero Section (cobreix la capçalera en mòbils) */
 .hero {
     position: relative;
     height: 100vh;
@@ -116,11 +116,19 @@ body {
     align-items: center;
     text-align: center;
     color: #fff;
-    background-image: url('el-teu-video-o-imatge-de-fons.jpg');
-    background-attachment: fixed; /* Això crea l'efecte parallax */
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background-placeholder.jpg'); /* Fons mentre el vídeo es carrega */
     background-size: cover;
+    background-position: center;
+    z-index: -2;
 }
 
 .video-background {
@@ -131,6 +139,12 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease; /* Suavitzar l'aparició del vídeo */
+}
+
+.video-background[autoplay] {
+    opacity: 1;
 }
 
 .hero-text {
@@ -207,12 +221,14 @@ body {
 
 @media (max-width: 768px) {
     #countdown-timer {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
     }
 
     #countdown-timer div {
         width: auto;
+        flex: 1;
     }
 }
 
@@ -268,6 +284,37 @@ body {
 .rsvp p {
     font-size: 18px;
     color: #555;
+}
+
+/* Secció d'Allotjament amb Parallax */
+.parallax {
+    background-image: url('imatge-allotjament.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allotjament-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.allotjament-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.allotjament-content p {
+    font-size: 18px;
+    color: white;
 }
 
 /* RSVP Button */

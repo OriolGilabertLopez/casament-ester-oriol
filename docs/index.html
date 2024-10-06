@@ -29,6 +29,8 @@
 
     <!-- Secció de Benvinguda amb vídeo -->
     <section class="hero">
+        <!-- Imatge de fons temporal mentre es carrega el vídeo -->
+        <div class="hero-background"></div>
         <video autoplay muted loop class="video-background" aria-label="Vídeo de fons">
             <source src="video-de-fons.mp4" type="video/mp4">
             El teu navegador no suporta vídeos.
@@ -88,10 +90,12 @@
         <p>Carpaccio de tomàquet, filet de vedella, i pastís de xocolata</p>
     </section>
 
-    <!-- Secció d'Allotjament i Transport -->
-    <section id="allotjament" class="allotjament">
-        <h2>Allotjament</h2>
-        <p>Hotel X, a 10 minuts del lloc de la cerimònia</p>
+    <!-- Secció d'Allotjament i Transport amb Parallax -->
+    <section id="allotjament" class="allotjament parallax">
+        <div class="allotjament-content">
+            <h2>Allotjament</h2>
+            <p>Hotel X, a 10 minuts del lloc de la cerimònia</p>
+        </div>
     </section>
 
     <!-- Secció de Confirmació d'Assistència (RSVP) -->
@@ -130,7 +134,14 @@
             menuHamburguesa.setAttribute("aria-expanded", isExpanded);
         });
 
-        // Compte enrere per al casament (20 d'agost de 2024)
+        // Tancar el menú hamburguesa quan es fa clic en un enllaç
+        document.querySelectorAll('#menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.remove('mostrar');
+            });
+        });
+
+        // Compte enrere per al casament (20 d'agost de 2025)
         const weddingDate = new Date("August 20, 2025 00:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
