@@ -69,9 +69,15 @@
         </div>
     </section>
 
-    <!-- Secció d'Història -->
-    <section id="historia" class="historia">
-        <h2>La nostra història</h2>
+    <!-- Secció d'Història amb imatges de fons canviants i text peu de foto -->
+    <section id="historia" class="historia slideshow-background">
+        <div class="historia-content">
+            <h2>La nostra història</h2>
+        </div>
+    </section>
+
+    <!-- Text peu de foto sota la imatge -->
+    <section class="historia-peu">
         <p>Ens vam conèixer fa 11 anys a la biblioteca de Sabadell. Ara, estem a punt de començar aquest nou capítol com a marit i muller.</p>
     </section>
 
@@ -176,17 +182,22 @@
                 parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
             });
         }
+
+        // Canvi automàtic d'imatges de fons per a la secció 'historia'
+        let bgIndex = 0;
+        const bgImages = [
+            'imatge-flores-Island.jpg',
+            'familia-amb-balu.jpg'
+        ];
+
+        function changeBackground() {
+            const historiaSection = document.querySelector('.slideshow-background');
+            bgIndex = (bgIndex + 1) % bgImages.length;
+            historiaSection.style.backgroundImage = `url(${bgImages[bgIndex]})`;
+        }
+
+        setInterval(changeBackground, 4000); // Canviem la imatge cada 4 segons
     </script>
-
-
-if (isMobile()) {
-    window.addEventListener('scroll', function() {
-        const parallax = document.querySelector('.parallax');
-        let scrollPosition = window.pageYOffset;
-        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-    });
-}
-
 
 </body>
 
