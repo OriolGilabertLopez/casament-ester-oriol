@@ -111,6 +111,12 @@
         <a href="https://forms.gle/teu-enllaç-google-forms" target="_blank" class="rsvp-link">RSVP</a>
     </section>
 
+    <!-- Like Button -->
+    <div class="like-button">
+        <span id="like-count">0</span>
+        <div class="heart" id="heart"></div>
+    </div>
+
     <script>
         // Scroll suau per la fletxa de benvinguda
         document.querySelector('.scroll-down').addEventListener('click', function(e) {
@@ -197,6 +203,22 @@
         }
 
         setInterval(changeBackground, 4000); // Canviem la imatge cada 4 segons
+
+        // Incrementar contador de "likes"
+        let likeCount = 0;
+
+        document.getElementById("heart").addEventListener("click", function () {
+            likeCount++;
+            document.getElementById("like-count").textContent = likeCount;
+
+            // Añadir clase para animar el corazón
+            this.classList.add("pressed");
+
+            // Eliminar la clase después de la animación para poder volver a activarla
+            setTimeout(() => {
+                this.classList.remove("pressed");
+            }, 600);
+        });
     </script>
 
 </body>
