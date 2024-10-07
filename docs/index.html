@@ -163,7 +163,30 @@
                 document.getElementById("countdown-timer").innerHTML = "<h3>Ja estem casats!</h3>";
             }
         }, 1000);
+
+        // Efecte parallax per a mòbils
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        if (isMobile()) {
+            window.addEventListener('scroll', function() {
+                const parallax = document.querySelector('.parallax');
+                let scrollPosition = window.pageYOffset;
+                parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            });
+        }
     </script>
+
+
+if (isMobile()) {
+    window.addEventListener('scroll', function() {
+        const parallax = document.querySelector('.parallax');
+        let scrollPosition = window.pageYOffset;
+        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    });
+}
+
 
 </body>
 
