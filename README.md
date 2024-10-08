@@ -1,25 +1,25 @@
-# Ester & Oriol - Wedding Website
+# Ester & Oriol - Página web de la boda
 
-This repository contains the code for the wedding website of **Ester & Oriol**, created in HTML, CSS, and JavaScript. The website includes several interactive sections such as a countdown timer, a smooth scrolling menu, a like button, and background image sliders.
+Este repositorio contiene el código para la página web de la boda de **Ester & Oriol**, creada con HTML, CSS y JavaScript. El sitio web incluye varias secciones interactivas como un temporizador de cuenta regresiva, un menú de navegación suave, un botón de "like", y un carrusel de imágenes de fondo.
 
-## Table of Contents
-- [Website Features](#website-features)
-- [Directory Structure](#directory-structure)
-- [How to Run the Project](#how-to-run-the-project)
-- [Technologies Used](#technologies-used)
-- [License](#license)
+## Tabla de Contenidos
+- [Características del Sitio Web](#características-del-sitio-web)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Cómo Ejecutar el Proyecto](#cómo-ejecutar-el-proyecto)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Licencia](#licencia)
 
-## Website Features
+## Características del Sitio Web
 
-- **Countdown Timer**: A countdown to the wedding date (August 20, 2025).
-- **Smooth Scrolling Navigation**: A hamburger menu for mobile devices with smooth scrolling to sections.
-- **Background Video**: A background video that plays automatically on the homepage.
-- **Interactive Like Button**: A like button with a heart animation that increments the number of likes.
-- **Image Slideshow**: A section with background images that change every few seconds.
-- **Parallax Effect**: The accommodation section features a parallax scrolling effect.
-- **Responsive Design**: The website is responsive and optimized for both mobile and desktop views.
+- **Cuenta Regresiva**: Un temporizador de cuenta regresiva para el día de la boda (20 de agosto de 2025).
+- **Navegación Suave**: Un menú tipo hamburguesa para dispositivos móviles con desplazamiento suave entre secciones.
+- **Video de Fondo**: Un video que se reproduce automáticamente en la página principal.
+- **Botón de "Like" Interactivo**: Un botón con un ícono de corazón que incrementa el número de "likes" con una animación.
+- **Carrusel de Imágenes**: Una sección con imágenes de fondo que cambian automáticamente cada pocos segundos.
+- **Efecto Parallax**: La sección de alojamiento cuenta con un efecto de desplazamiento parallax.
+- **Diseño Responsivo**: El sitio es responsivo y está optimizado tanto para dispositivos móviles como de escritorio.
 
-## Directory Structure
+## Estructura del Proyecto
 
-Here is the structure of the project:
+Aquí tienes la estructura del proyecto:
 
