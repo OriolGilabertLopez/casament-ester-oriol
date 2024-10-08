@@ -7,7 +7,6 @@ Este repositorio contiene el código para la página web de la boda de **Ester &
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Cómo Ejecutar el Proyecto](#cómo-ejecutar-el-proyecto)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Licencia](#licencia)
 
 ## Características del Sitio Web
 
@@ -21,5 +20,40 @@ Este repositorio contiene el código para la página web de la boda de **Ester &
 
 ## Estructura del Proyecto
 
-Aquí tienes la estructura del proyecto:
+Aquí esta la estructura del proyecto:
+
+📁 project-root  
+│  
+├── 📁 images            # Contains the images used on the website  
+│   ├── familia-amb-balu.jpg  
+│   ├── imatge-allotjament.jpg  
+│   ├── imatge-flores-Island.jpg  
+│  
+├── 📁 styles            # Contains CSS files  
+│   └── styles.css       # Main CSS file  
+│  
+├── 📁 videos            # Contains video files  
+│   └── video-de-fons.mp4 # Background video for the hero section  
+│  
+├── index.html           # Main HTML file  
+├── README.md            # Project documentation  
+
+## Cómo Ejecutar el Proyecto
+
+1. **Clonar el Repositorio**:
+   Clona el repositorio en tu máquina local:
+
+   ```bash
+   git clone https://github.com/tu-usuario/repository.git
+   cd repository
+
+
+2. **Abrir el archivo HTML**: Abre el archivo `index.html` en tu navegador preferido. No se necesita configuración adicional ya que es un sitio web estático.
+
+## Tecnologías Utilizadas
+ * **HTML5**: Para la estructura del sitio web.
+* **CSS3**: Para el estilo, incluyendo la responsividad, animaciones y el efecto parallax.
+* **JavaScript****: Para la interactividad, incluyendo el temporizador de cuenta regresiva, el botón de "like", y el carrusel de imágenes de fondo.
+
+
 
