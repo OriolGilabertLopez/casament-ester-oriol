@@ -108,8 +108,8 @@ body {
 
     /* Estils específics per al títol "Ester & Oriol" en mòbils */
     .hero-text h1 {
-        font-size: 48px;
-        line-height: 1.2;
+        font-size: 48px; /* Reduïm la mida de la font per a mòbils */
+        line-height: 1.2; /* Ajustem l'espaiat entre línies */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -122,7 +122,7 @@ body {
     }
 }
 
-/* Hero Section */
+/* Hero Section (cobreix la capçalera en mòbils) */
 .hero {
     position: relative;
     height: 100vh;
@@ -140,7 +140,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background-placeholder.jpg');
+    background-image: url('background-placeholder.jpg'); /* Fons mentre el vídeo es carrega */
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -155,7 +155,7 @@ body {
     object-fit: cover;
     z-index: -1;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease; /* Suavitzar l'aparició del vídeo */
 }
 
 .video-background[autoplay] {
@@ -247,31 +247,182 @@ body {
     }
 }
 
-/* Like Button - Cor flotant */
+/* Secció de Detalls */
+.detalls {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.detall-item {
+    text-align: center;
+    width: 30%;
+}
+
+.detall-item h2 {
+    font-size: 28px;
+    color: #ff4081;
+}
+
+.detall-item p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Secció d'Història */
+.historia,
+.programa,
+.menu,
+.allotjament,
+.rsvp {
+    padding: 40px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.historia h2,
+.programa h2,
+.menu h2,
+.allotjament h2,
+.rsvp h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.historia p,
+.programa p,
+.menu p,
+.allotjament p,
+.rsvp p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Secció d'Història amb fons de diapositiva */
+.slideshow-background {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /*transition: background-image 1s ease-in-out;*/
+}
+
+.historia-content {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.historia-content h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Text de peu de foto sota la imatge */
+.historia-peu {
+    background-color: #f0f0f0; /* Color de fons desitjat */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra suau */
+    margin-bottom: 20px; /* Afegir espai a sota */
+}
+
+.historia-peu p {
+    font-size: 18px;
+    color: #333; /* Text fosc per a contrast */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Secció d'Allotjament amb Parallax */
+.parallax {
+    background-image: url('imatge-allotjament.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allotjament-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.allotjament-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.allotjament-content p {
+    font-size: 18px;
+    color: white;
+}
+
+/* RSVP Button */
+.rsvp-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff4081;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.rsvp-link:hover {
+    background-color: #ff6699;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Botón de like con corazón */
 .like-button {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    bottom: 20px;  /* Coloca el botón en la parte inferior */
+    right: 20px;   /* Coloca el botón en la esquina derecha */
     display: flex;
     align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    background-color: #fff;  /* Fondo blanco */
+    padding: 10px 15px;  /* Añade un relleno interno */
+    border-radius: 50px;  /* Bordes redondeados para un look suave */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
     cursor: pointer;
     z-index: 1000;
 }
 
 .like-button span {
     font-size: 18px;
-    color: #ff4081;
+    color: #ff4081; /* Color del contador de likes */
     margin-right: 10px;
 }
 
 .heart {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background-color: #ff4081;
     transform: rotate(-45deg);
     margin-right: 10px;
@@ -281,20 +432,20 @@ body {
 .heart::after {
     content: "";
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background-color: #ff4081;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -12px;
+    top: -10px;
     left: 0;
 }
 
 .heart::after {
     top: 0;
-    left: 12px;
+    left: 10px;
 }
 
 .heart.pressed {
