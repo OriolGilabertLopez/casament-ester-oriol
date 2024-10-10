@@ -467,44 +467,123 @@ html {
 
 
 
-/* Caja de comentarios */
-.comment-box {
+/* Icono de comentario y caja */
+.comment-icon-box {
     position: fixed;
-    bottom: 20px; /* Posiciona la caja en la parte inferior */
-    left: 20px;   /* En la esquina inferior izquierda */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    bottom: 20px;
+    left: 20px;
     z-index: 1000;
-    max-width: 300px; /* Limitar el ancho */
+    display: flex;
+    align-items: center; /* Alinea el ícono y la caja de comentario en el mismo eje horizontal */
 }
 
-.comment-box textarea {
-    width: 100%;
-    height: 60px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+.comment-icon {
+    background-color: #ff4081;
     padding: 10px;
-    font-size: 14px;
-    resize: none; /* No permite cambiar el tamaño del textarea */
-    margin-bottom: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.comment-box button {
+.comment-box-horizontal {
+    display: none; /* Por defecto, oculto */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* Espaciado entre el icono y la caja de comentarios */
+    display: flex;
+    align-items: center;
+}
+
+.comment-box-horizontal textarea {
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px; /* Bordes redondeados */
+    border: 1px solid #ddd;
+    resize: none;
+    font-size: 14px;
+    outline: none; /* Quitar borde azul al hacer clic */
+    box-shadow: none;
+}
+
+.comment-box-horizontal button {
     background-color: #ff4081;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 8px 16px;
+    border-radius: 20px; /* Bordes redondeados para el botón */
     cursor: pointer;
     font-size: 14px;
+    margin-left: 10px; /* Espacio entre textarea y botón */
 }
 
-.comment-box button:hover {
+.comment-box-horizontal button:hover {
     background-color: #ff6699;
 }
 
+
+
+
+
+/* Estilos para el botón de mostrar comentarios */
+.show-comments-container {
+    position: fixed;
+    bottom: 80px; /* Justo encima del icono de comentario */
+    left: 20px;
+    z-index: 1000;
+}
+
+#show-comments-button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#show-comments-button:hover {
+    background-color: #ff6699;
+}
+
+/* Contenedor de comentarios aleatorios */
+.random-comments {
+    position: fixed;
+    bottom: 150px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-item {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo gris oscuro transparente */
+    color: white; /* Texto en color blanco */
+    padding: 10px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    max-width: 300px; /* Limitar el ancho */
+    word-wrap: break-word; /* Permitir el salto de línea en palabras largas */
+}
+
+/* Efecto de explosión */
+.comment-item.explode {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Efecto de desvanecimiento */
+.comment-item.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}

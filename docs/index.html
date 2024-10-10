@@ -29,7 +29,6 @@
 
     <!-- Secció de Benvinguda amb vídeo -->
     <section class="hero">
-        <!-- Imatge de fons temporal mentre es carrega el vídeo -->
         <div class="hero-background"></div>
         <video autoplay muted loop class="video-background" aria-label="Vídeo de fons">
             <source src="video-de-fons.mp4" type="video/mp4">
@@ -115,6 +114,21 @@
     <div class="like-button">
         <span id="like-count">0</span>
         <div class="heart" id="heart"></div>
+    </div>
+
+    <!-- Comment Icon and Comment Box -->
+    <div class="comment-icon-box">
+        <div class="comment-icon" id="comment-icon">
+            <!-- SVG del icono de comentario -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m5 2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h11l4 4z" />
+            </svg>
+        </div>
+        <!-- Caja de comentarios -->
+        <div class="comment-box-horizontal" id="comment-box" style="display:none;">
+            <textarea id="comment-input" placeholder="..."></textarea>
+            <button id="submit-comment">Enviar</button>
+        </div>
     </div>
 
     <script>
@@ -209,8 +223,26 @@
         // Import the necessary Firebase SDKs
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
-        import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"; // Import Realtime Database
+        import { getDatabase, ref, get, set, push } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"; // Import Realtime Database
 
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCThyq7hjXkSpc44RUVxS9PHx9MYyF7M8I",
+            authDomain: "web-casament-ester-i-oriol.firebaseapp.com",
+            databaseURL: "https://web-casament-ester-i-oriol-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "web-casament-ester-i-oriol",
+            storageBucket: "web-casament-ester-i-oriol.appspot.com",
+            messagingSenderId: "271047282446",
+            appId: "1:271047282446:web:de13785dddb38a9804d15f",
+            measurementId: "G-YNNRHNKWTH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Initialize Firebase Realtime Database
+        const database = getDatabase(app);
 
         const likeCountSpan = document.getElementById("like-count");
         const likeButton = document.getElementById("heart");
@@ -253,55 +285,23 @@
                 console.error("Error al actualizar los likes:", error);
             });
         });
-    </script>
 
+        // Mostrar/ocultar caja de comentarios cuando se hace clic en el ícono de comentario
+        const commentIcon = document.getElementById("comment-icon");
+        const commentBox = document.getElementById("comment-box");
+        commentIcon.addEventListener("click", function () {
+            commentBox.style.display = (commentBox.style.display === "none" || commentBox.style.display === "") ? "flex" : "none";
+        });
 
-
-    <!-- Comentario input box -->
-    <div class="comment-box">
-        <textarea id="comment-input" placeholder="Escriu el teu comentari..."></textarea>
-        <button id="submit-comment">Enviar</button>
-    </div>
-
-
-
-
-    <script type="module">
-        // Import the necessary Firebase SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-        import { getDatabase, ref, push, get } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
-    
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCThyq7hjXkSpc44RUVxS9PHx9MYyF7M8I",
-            authDomain: "web-casament-ester-i-oriol.firebaseapp.com",
-            databaseURL: "https://web-casament-ester-i-oriol-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "web-casament-ester-i-oriol",
-            storageBucket: "web-casament-ester-i-oriol.appspot.com",
-            messagingSenderId: "271047282446",
-            appId: "1:271047282446:web:de13785dddb38a9804d15f",
-            measurementId: "G-YNNRHNKWTH"
-        };
-    
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-    
-        // Initialize Firebase Realtime Database
-        const database = getDatabase(app);
-    
-        // Referencia para guardar los comentarios en la base de datos
+        // Comentarios - guardar en Firebase
         const commentsRef = ref(database, 'comments');
-    
-        // Manejar el envío del comentario
         document.getElementById("submit-comment").addEventListener("click", function () {
             const commentInput = document.getElementById("comment-input");
             const commentText = commentInput.value.trim();
-    
+
             if (commentText.length > 0) {
-                // Guardar el comentario en Firebase
                 push(commentsRef, commentText)
                     .then(() => {
-                        // Limpiar el campo de comentario
                         commentInput.value = "";
                         alert("Comentari enviat amb èxit!");
                     })
@@ -312,8 +312,74 @@
                 alert("El comentari no pot estar buit.");
             }
         });
+
+
+        // Función para obtener comentarios aleatorios de Firebase
+        function getRandomComments(comments, count) {
+            const shuffled = comments.sort(() => 0.5 - Math.random()); // Mezcla los comentarios
+            return shuffled.slice(0, count); // Devuelve un número de comentarios aleatorio
+        }
+
+        // Manejar la lógica de mostrar los comentarios aleatorios con efecto
+        const showCommentsButton = document.getElementById("show-comments-button");
+        const randomCommentsContainer = document.getElementById("random-comments");
+
+        showCommentsButton.addEventListener("click", function () {
+            // Obtén todos los comentarios de Firebase
+            const commentsRef = ref(database, 'comments');
+            get(commentsRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const allComments = Object.values(snapshot.val());
+                    const randomComments = getRandomComments(allComments, 3); // Obtener 3 comentarios aleatorios
+
+                    // Limpiar la sección de comentarios aleatorios
+                    randomCommentsContainer.innerHTML = '';
+
+                    // Añadir cada comentario aleatoriamente con el efecto de "explosión"
+                    randomComments.forEach((comment, index) => {
+                        const commentItem = document.createElement("div");
+                        commentItem.classList.add("comment-item");
+                        commentItem.textContent = comment;
+
+                        // Añadir el comentario al contenedor
+                        randomCommentsContainer.appendChild(commentItem);
+
+                        // Aplicar el efecto de explosión con un retraso
+                        setTimeout(() => {
+                                commentItem.classList.add("explode");
+                            }, index * 300);
+
+                            // Desaparecer los comentarios con desvanecimiento después de 2 segundos
+                            setTimeout(() => {
+                                commentItem.classList.add("fade-out");
+
+                                // Eliminar el comentario visualmente después de la animación de desvanecimiento
+                                setTimeout(() => {
+                                    commentItem.remove();
+                                }, 800); // Tiempo para la transición de desvanecimiento
+                            }, 2300); // Desaparecer después de 2 segundos
+                        });
+                    } else {
+                        alert("No hi ha comentaris.");
+                    }
+                }).catch((error) => {
+                    console.error("Error al obtenir els comentaris:", error);
+                });
+            });
+
     </script>
+
+
+
+    <!-- Botón para mostrar comentarios -->
+    <div class="show-comments-container">
+        <button id="show-comments-button">Mostrar comentaris</button>
+    </div>
+
+    <!-- Sección donde aparecerán los comentarios aleatoris -->
+    <div class="random-comments" id="random-comments"></div>
     
+
 </body>
 
 </html>
