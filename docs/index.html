@@ -203,24 +203,117 @@
         }
 
         setInterval(changeBackground, 4000); // Canviem la imatge cada 4 segons
+    </script>
 
-        // Incrementar contador de "likes"
-        let likeCount = 0;
+    <script type="module">
+        // Import the necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+        import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"; // Import Realtime Database
 
-        document.getElementById("heart").addEventListener("click", function () {
-            likeCount++;
-            document.getElementById("like-count").textContent = likeCount;
 
-            // Añadir clase para animar el corazón
-            this.classList.add("pressed");
+        const likeCountSpan = document.getElementById("like-count");
+        const likeButton = document.getElementById("heart");
 
-            // Eliminar la clase después de la animación para poder volver a activarla
-            setTimeout(() => {
-                this.classList.remove("pressed");
-            }, 600);
+        // Referencia al nodo de likes en la base de datos
+        const likesRef = ref(database, 'likes');
+
+        // Cargar los likes cuando se cargue la página
+        get(likesRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                likeCountSpan.textContent = snapshot.val();
+            } else {
+                likeCountSpan.textContent = 0;
+            }
+        }).catch((error) => {
+            console.error("Error al obtener los likes:", error);
+        });
+
+        // Incrementar likes y actualizar la base de datos cuando se haga clic en el botón de corazón
+        likeButton.addEventListener("click", function () {
+            get(likesRef).then((snapshot) => {
+                let currentLikes = 0;
+                if (snapshot.exists()) {
+                    currentLikes = snapshot.val();
+                }
+                const newLikeCount = currentLikes + 1;
+
+                // Actualizar los likes en la base de datos
+                set(likesRef, newLikeCount).then(() => {
+                    // Actualizar el contador en la página
+                    likeCountSpan.textContent = newLikeCount;
+
+                    // Añadir animación de corazón
+                    likeButton.classList.add("pressed");
+                    setTimeout(() => {
+                        likeButton.classList.remove("pressed");
+                    }, 600);
+                });
+            }).catch((error) => {
+                console.error("Error al actualizar los likes:", error);
+            });
         });
     </script>
 
+
+
+    <!-- Comentario input box -->
+    <div class="comment-box">
+        <textarea id="comment-input" placeholder="Escriu el teu comentari..."></textarea>
+        <button id="submit-comment">Enviar</button>
+    </div>
+
+
+
+
+    <script type="module">
+        // Import the necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getDatabase, ref, push, get } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
+    
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCThyq7hjXkSpc44RUVxS9PHx9MYyF7M8I",
+            authDomain: "web-casament-ester-i-oriol.firebaseapp.com",
+            databaseURL: "https://web-casament-ester-i-oriol-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "web-casament-ester-i-oriol",
+            storageBucket: "web-casament-ester-i-oriol.appspot.com",
+            messagingSenderId: "271047282446",
+            appId: "1:271047282446:web:de13785dddb38a9804d15f",
+            measurementId: "G-YNNRHNKWTH"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+        // Initialize Firebase Realtime Database
+        const database = getDatabase(app);
+    
+        // Referencia para guardar los comentarios en la base de datos
+        const commentsRef = ref(database, 'comments');
+    
+        // Manejar el envío del comentario
+        document.getElementById("submit-comment").addEventListener("click", function () {
+            const commentInput = document.getElementById("comment-input");
+            const commentText = commentInput.value.trim();
+    
+            if (commentText.length > 0) {
+                // Guardar el comentario en Firebase
+                push(commentsRef, commentText)
+                    .then(() => {
+                        // Limpiar el campo de comentario
+                        commentInput.value = "";
+                        alert("Comentari enviat amb èxit!");
+                    })
+                    .catch((error) => {
+                        console.error("Error al enviar el comentari:", error);
+                    });
+            } else {
+                alert("El comentari no pot estar buit.");
+            }
+        });
+    </script>
+    
 </body>
 
 </html>

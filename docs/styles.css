@@ -463,3 +463,48 @@ html {
         transform: scale(1);
     }
 }
+
+
+
+
+/* Caja de comentarios */
+.comment-box {
+    position: fixed;
+    bottom: 20px; /* Posiciona la caja en la parte inferior */
+    left: 20px;   /* En la esquina inferior izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px; /* Limitar el ancho */
+}
+
+.comment-box textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none; /* No permite cambiar el tamaño del textarea */
+    margin-bottom: 10px;
+}
+
+.comment-box button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-box button:hover {
+    background-color: #ff6699;
+}
+
