@@ -1,0 +1,74 @@
+/* Secció d'Història */
+.historia,
+.programa,
+.menu,
+.allotjament,
+.rsvp {
+    padding: 40px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.historia h2,
+.programa h2,
+.menu h2,
+.allotjament h2,
+.rsvp h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.historia p,
+.programa p,
+.menu p,
+.allotjament p,
+.rsvp p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Secció d'Història amb fons de diapositiva */
+.slideshow-background {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /*transition: background-image 1s ease-in-out;*/
+}
+
+.historia-content {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.historia-content h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Text de peu de foto sota la imatge */
+.historia-peu {
+    background-color: #f0f0f0; /* Color de fons desitjat */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra suau */
+    margin-bottom: 20px; /* Afegir espai a sota */
+}
+
+.historia-peu p {
+    font-size: 18px;
+    color: #333; /* Text fosc per a contrast */
+    max-width: 800px;
+    margin: 0 auto;
+}

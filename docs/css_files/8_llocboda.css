@@ -1,0 +1,31 @@
+/* Secció Loc Boda amb Parallax */
+.parallax {
+    background-image: url('montseny.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Espai-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.Espai-content h2 {
+    margin-top: 20px;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.Espai-content p {
+    font-size: 18px;
+    color: white;
+}

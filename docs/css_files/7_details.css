@@ -1,0 +1,22 @@
+/* Secció de Detalls */
+.detalls {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.detall-item {
+    text-align: center;
+    width: 30%;
+}
+
+.detall-item h2 {
+    font-size: 28px;
+    color: #ff4081;
+}
+
+.detall-item p {
+    font-size: 18px;
+    color: #333;
+}

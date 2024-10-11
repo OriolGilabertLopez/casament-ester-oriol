@@ -1,0 +1,65 @@
+/* Secció de Compte Enrere */
+.countdown {
+    background-color: #f0f0f0;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.countdown h2 {
+    font-size: 36px;
+    color: #0096884d;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#countdown-timer div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    text-align: center;
+}
+
+#countdown-timer div span {
+    font-size: 36px;
+    color: #0096884d;
+    display: block;
+    font-weight: 600;
+}
+
+#countdown-timer div p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    #countdown-timer {
+        flex-direction: row; /* Mantenim els elements en una fila */
+        flex-wrap: nowrap;   /* Assegura que els elements no saltin a la següent línia */
+        gap: 10px;           /* Ajustem l'espai entre els elements per a mòbils */
+    }
+
+    #countdown-timer div {
+        width: 80px;         /* Ajusta l'amplada de cada element per cabre en pantalles petites */
+        flex: 1;             /* Tots els elements tindran la mateixa mida relativa */
+    }
+
+    #countdown-timer div span {
+        font-size: 28px;     /* Redueix la mida del text per a mòbils */
+    }
+
+    #countdown-timer div p {
+        font-size: 12px;     /* Ajusta la mida del text per a mòbils */
+    }
+}

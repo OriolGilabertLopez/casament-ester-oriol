@@ -1,0 +1,30 @@
+/* Secció d'Allotjament amb Parallax */
+.parallax {
+    background-image: url('imatge-allotjament.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allotjament-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.allotjament-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.allotjament-content p {
+    font-size: 18px;
+    color: white;
+}
