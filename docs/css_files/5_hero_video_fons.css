@@ -1,16 +1,17 @@
-
-/* Hero Section (cobreix la capçalera en mòbils) */
-
+/* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* La secció hero ocupa tota la pantalla */
     display: flex;
-    overflow: hidden; /* Evita que el vídeo es vegi fora de la secció */
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background-placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Evita que el vídeo es mostri fora de la secció hero */
+    z-index: 1; /* Assegura que altres elements es mostren després del hero */
 }
 
 .hero-background {
@@ -19,7 +20,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background-placeholder.jpg'); /* Fons mentre el vídeo es carrega */
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -31,31 +31,45 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;  
     z-index: -1;
-    opacity: 0;
-    transition: opacity 1s ease; /* Suavitzar l'aparició del vídeo */
-}
-
-.video-background[autoplay] {
     opacity: 1;
+    transition: opacity 1.5s ease;
 }
 
-/* Ajust per a dispositius mòbils */
+/* Ajust per a mòbils */
 @media (max-width: 768px) {
     .video-background {
-        position: absolute; /* Canvia a posicionament absolut per mòbils */
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: auto;
     }
-}
 
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+}
 
 .hero-text {
     z-index: 1;
 }
+
+.scroll-down {
+    font-size: 32px;
+    color: #038f81;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+
+
 
 .hero-text h1 {
     font-size: 72px;
@@ -71,11 +85,4 @@
     font-size: 24px;
     margin-top: 10px;
     font-weight: 300;
-}
-
-.scroll-down {
-    font-size: 32px;
-    color: #038f81;
-    margin-top: 30px;
-    cursor: pointer;
 }
