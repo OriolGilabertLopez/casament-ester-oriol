@@ -15,6 +15,14 @@ body {
     line-height: 1.6;
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Ajusta la imagen para que siempre quepa en la pantalla */
+        background-position: top center; /* Ajusta la posición de la imagen si es necesario */
+    }
+}
+
 
 /* Menú horitzontal superior */
 .menu-superior {
