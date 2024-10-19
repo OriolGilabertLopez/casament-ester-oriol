@@ -129,7 +129,6 @@ body {
 
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     position: relative;
     height: 100vh; /* La sección hero ocupa toda la pantalla */
@@ -194,8 +193,6 @@ body {
 
 
 
-
-
 .hero-text h1 {
     font-size: 72px;
     text-transform: uppercase;
@@ -235,15 +232,13 @@ body {
 
 
 
-
-
-
 .data_casament {
     font-family: 'Poppins', sans-serif;
-    font-size: 50px; /* Ajusta según el tamaño que prefieras */
+    font-size: 60px; /* Ajusta según el tamaño que prefieras */
     font-weight: 900; /* Más negrita */
     letter-spacing: -1px; /* Reduce el espaciado entre letras */
     text-align: center;
+    margin-bottom: -40px;
 }
 
 
@@ -274,6 +269,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-bottom: 20px;
 }
 
 #countdown-timer div {
@@ -341,27 +337,80 @@ body {
     margin-bottom: -30pt;
 }
 
+.tres_fulles_olivera {
+    text-align: center; /* Centra la imagen */
+}
+
+.tres_fulles_olivera img {
+    width: 250px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene las proporciones de la imagen */
+
+}
+
+
+
+
+
+
+.programa h2 {
+    font-family: 'Amatic SC';
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: -30px;
+}
+
+#programa {
+    background-color: #718c5a; /* Fondo color rosa */
+    height: 260px; /* Ajusta el tamaño de la imagen */
+    background-color: rgba(113, 140, 90, 0.4); /* Verde con 50% de transparencia */
+}
+
+
+
+
+
 /* Secció de Detalls */
 .detalls {
     display: flex;
     justify-content: space-around;
-    padding: 60px 0;
     /*background-color: #fff;*/
 }
 
 .detall-item {
     text-align: center;
-    width: 30%;
+    width: 100%;
 }
 
 .detall-item h2 {
-    font-size: 28px;
+    font-family: 'Amatic SC';
+    font-size: 42px;
     color: #718c5a;
 }
 
 .detall-item p {
     font-size: 18px;
     color: #333;
+}
+
+
+.image-container {
+    text-align: center; /* Centra la imagen */
+}
+
+.image-container img {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene las proporciones de la imagen */
+
+}
+
+
+.acces_masmarti {
+    font-size: 16px; /* Ajusta según el tamaño que prefieras */
+    text-align: center;
+    color: #333; /* Color del texto */
+    margin-top: 50px; /* Ajusta este valor para controlar el espacio superior */
+    margin: 25px;
 }
 
 
@@ -378,15 +427,21 @@ body {
     margin-bottom: 20px;
 }
 
+
+
 .historia h2,
-.programa h2,
 .menu h2,
 .allotjament h2,
 .rsvp h2 {
     font-size: 36px;
     color: #718c5a;
     margin-bottom: 20px;
+    margin-top: -30px;
 }
+
+
+
+
 
 .historia p,
 .programa p,
@@ -439,6 +494,9 @@ body {
     text-decoration: none;
     border-radius: 50px;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: -500px;
+
 }
 
 .rsvp-link:hover {

@@ -20,8 +20,7 @@
         <ul id="menu-links">
             <li><a href="#detalls">Detalls</a></li>
             <li><a href="#programa">Programa</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
-            <li><a href="#menu">RSVP</a></li>
+            <li><a href="#rsvp">Vens?</a></li>
 
         </ul>
     </nav>
@@ -45,11 +44,14 @@
         <h1 class="ens-casem">ENS CASEM!</h1>
     </div>
 
-    <div class="custom-text">
-        <p class="frase-ens-casem"> Després d'onze anys d'haver començat la nostra història, ens encantaria que poguéssiu formar part de la nostra nova aventura. Us esperem amb molta il·lusió! </p>
-    </div>
+    <p class="frase-ens-casem"> Després d'onze anys d'haver començat la nostra història, ens encantaria que poguéssiu formar part de la nostra nova aventura. Us esperem amb molta il·lusió! </p>
 
+        
     
+
+    <div class="tres_fulles_olivera">
+        <img src="tres_fulles_olivera.png" alt="Separador hoja de olivo">
+    </div>
 
 
     <div class="hero-text">
@@ -78,7 +80,7 @@
 
     <!-- Secció del Programa -->
     <section id="programa" class="programa">
-        <h2>Programa 📋</h2>
+        <h2>Programa </h2>
         <p>17.00h - Benvinguda</p>
         <p>17.30h - Cerimònia</p>
         <p>18.00h - Cocktail</p>
@@ -86,32 +88,71 @@
         <p>22.00h - Party!</p>
     </section>
 
-    <div class="fulla_olivera">
-        <img src="fulla_canva.jpg" alt="Separador hoja de olivo">
-    </div>
-
-
+   
 
     <!-- Secció de Confirmació d'Assistència (RSVP) -->
     <section id="rsvp" class="rsvp">
-        <h2>Confirmació d'Assistència</h2>
-        <p>Si us plau, confirma la teva assistència aquí:</p>
-        <a href="https://forms.gle/teu-enllaç-google-forms" target="_blank" class="rsvp-link">RSVP</a>
+        <h2>Confirma'ns si vens :)</h2>
+        <p>Si us plau, omple el següent formulari tan si vens com si no</p>
+        <a href="https://forms.gle/teu-enllaç-google-forms" target="_blank" class="rsvp-link">Respon aquí</a>
     </section>
 
-
-    <div class="fulla_olivera">
-        <img src="fulla_canva.jpg" alt="Separador hoja de olivo">
+    <div class="tres_fulles_olivera">
+        <img src="tres_fulles_olivera.png" alt="Separador hoja de olivo 2">
     </div>
+
+
 
        <!-- Secció de Detalls -->
     <section id="detalls" class="detalls">
-
         <div class="detall-item">
-            <h2>📍</h2>
-            <p>Mas El Matrí, Viladrau</p>
+            <h2>Mas El Martí, Viladrau</h2>
         </div>
     </section>
+
+
+    <!-- Sección del mapa -->
+    <section id="mapa" class="mapa">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d23779.714203415177!2d2.3792891!3d41.8398327!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x12a4d43f6b4dbcbb%3A0xb9bd4a78ab2926bb!2sMas%20el%20Marti%2C%20Cam%C3%AD%20de%20Mas%20el%20Marti%2C%20s%2Fn%2C%2017406%20Viladrau%2C%20Girona!3m2!1d41.8385238!2d2.3996899!5e0!3m2!1sca!2ses!4v1729365808823!5m2!1sca!2ses" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <p class="acces_masmarti"> És important que per accedir al Mas, agafeu la ruta que passa per la C17 direcció Vic i desviar-vos per la C25. D'aquesta manera us estalviareu moltes curves i camins sense esfaltar (Carretera de Sant Miquel de Balanyà, Seva, Mas Vidal...). Just al arribar al Mas trobareu aparcament allà mateix.  </p>
+        
+        <div class="image-container">
+            <img src="maps_ruta.png" alt="Ruta hacia Mas El Martí" class="map-image">
+        </div>
+    </section>
+
+    
+
+
+
+
+
+    <!-- CSS para el mapa -->
+    <style>
+        .map-container {
+            width: 100%; /* Ajusta el contenedor al 100% del espacio disponible dentro de sus límites */
+            max-width: 350px; /* Establece un ancho máximo de 600px */
+            min-width: 300px; /* Establece un ancho mínimo de 300px */
+            margin: 20px auto; /* Añade un margen superior e inferior y centra el mapa horizontalmente */
+            border-radius: 15px; /* Bordes redondeados */
+            overflow: hidden; /* Asegura que el contenido dentro del iframe se mantenga dentro de los bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        iframe {
+            border-radius: 15px; /* Bordes redondeados del iframe */
+        }
+    </style>
+
 
 
 
@@ -196,7 +237,7 @@
         });
 
         // Compte enrere per al casament (20 d'agost de 2025)
-        const weddingDate = new Date("August 20, 2025 00:00:00").getTime();
+        const weddingDate = new Date("July 05, 2025 17:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
