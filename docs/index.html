@@ -18,10 +18,9 @@
         <div class="logo">E&O</div>
         <div class="menu-hamburguesa" id="menu-hamburguesa" aria-label="Obrir menú">&#9776;</div> <!-- Menú hamburguesa -->
         <ul id="menu-links">
-            <li><a href="#detalls">Detalls</a></li>
             <li><a href="#programa">Programa</a></li>
-            <li><a href="#rsvp">Vens?</a></li>
-
+            <li><a href="#rsvp">Confirmació</a></li>
+            <li><a href="#detalls">On has d'anar?</a></li>
         </ul>
     </nav>
 
@@ -176,7 +175,7 @@
                     <i class="fas fa-eye"></i>
                 </button>
             </div>
-            
+
             <!-- Caja de comentarios -->
             <div class="comment-box-horizontal" id="comment-box" style="display:none;">
                 <textarea id="comment-input" placeholder="..."></textarea>
@@ -363,32 +362,39 @@
             });
         });
 
+
+
+
+
+
         // Mostrar/ocultar caja de comentarios cuando se hace clic en el ícono de comentario
-        const commentIcon = document.getElementById("comment-icon");
-        const commentBox = document.getElementById("comment-box");
-        commentIcon.addEventListener("click", function () {
-            commentBox.style.display = (commentBox.style.display === "none" || commentBox.style.display === "") ? "flex" : "none";
-        });
+   // Mostrar/ocultar caja de comentarios cuando se hace clic en el ícono de comentario
+const commentIcon = document.getElementById("comment-icon");
+const commentBox = document.getElementById("comment-box");
+commentIcon.addEventListener("click", function () {
+    commentBox.style.display = (commentBox.style.display === "none" || commentBox.style.display === "") ? "flex" : "none";
+});
 
-        // Comentarios - guardar en Firebase
-        const commentsRef = ref(database, 'comments');
-        document.getElementById("submit-comment").addEventListener("click", function () {
-            const commentInput = document.getElementById("comment-input");
-            const commentText = commentInput.value.trim();
+// Comentarios - guardar en Firebase
+const commentsRef = ref(database, 'comments');
+document.getElementById("submit-comment").addEventListener("click", function () {
+    const commentInput = document.getElementById("comment-input");
+    const commentText = commentInput.value.trim();
 
-            if (commentText.length > 0) {
-                push(commentsRef, commentText)
-                    .then(() => {
-                        commentInput.value = "";
-                        alert("Comentari enviat amb èxit! Gràcies amic/amiga");
-                    })
-                    .catch((error) => {
-                        console.error("Error al enviar el comentari:", error);
-                    });
-            } else {
-                alert("Tio, has d'escriure algo.... el comentari no pot estar buit. ");
-            }
-        });
+    if (commentText.length > 0) {
+        push(commentsRef, commentText)
+            .then(() => {
+                commentInput.value = ""; // Limpiar el campo de texto
+                alert("Comentari enviat amb èxit! Gràcies amic/amiga");
+                commentBox.style.display = "none"; // Ocultar la caja de comentarios después de enviar el comentario
+            })
+            .catch((error) => {
+                console.error("Error al enviar el comentari:", error);
+            });
+    } else {
+        alert("Tio, has d'escriure algo.... el comentari no pot estar buit. ");
+    }
+});
 
 
         // Función para obtener comentarios aleatorios de Firebase

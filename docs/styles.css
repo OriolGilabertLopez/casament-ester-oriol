@@ -35,9 +35,12 @@ body {
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 20px 0;
+    padding: 0px 0; /* Reduir el padding per fer la barra menys gruixuda */
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-superior.scrolled {
@@ -46,12 +49,11 @@ body {
 
 .menu-superior .logo {
     color: #fff;
-    font-size: 24px;
-    font-weight: 600;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+    font-size: 18px; /* Mida de font més petita per fer-ho més fi */
+    font-weight: 400; /* Reduir el gruix de la font */
+    margin-left: 20px; /* Ajustar la separació respecte a la vora esquerra */
 }
+
 
 .menu-superior ul {
     list-style: none;
@@ -82,14 +84,11 @@ body {
 
 
 .menu-hamburguesa {
-    display: none;
-    font-size: 30px;
+    font-size: 24px; /* Reduir la mida del menú hamburguesa */
     cursor: pointer;
     color: #fff;
     padding: 10px 20px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    margin-right: 20px; /* Ajustar la separació respecte a la vora dreta */
 }
 
 @media (max-width: 768px) {
@@ -135,8 +134,6 @@ body {
         text-align: center;
     }
 }
-
-
 
 
 /* Hero Section */
@@ -543,22 +540,22 @@ html {
 }
 
 
+
 /* Contenedor para los botones en fila */
 .bottom-container {
     position: fixed;
     bottom: 20px;  
-    left: 20px;    
-    display: flex;  /* Mantener la fila */
+    left: 0;
+    width: 100%; /* Asegurar que ocupe todo el ancho de la pantalla */
+    display: flex;
     align-items: center;
-    justify-content: space-between; /* Espacio entre los elementos */
-    gap: 20px;     
+    justify-content: space-between; /* Colocar los elementos en los extremos */
+    gap: 20px;
     z-index: 1000;
-    width: calc(100vw - 40px); /* Para asegurar que ocupen el ancho completo si es necesario */
+    
 }
-
-/* Botón de like con corazón */
+/* Botón de like con corazón - Pegado a la derecha */
 .like-button {
-    order: 3; /* Mover el corazón a la derecha */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,6 +565,7 @@ html {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     z-index: 1000;
+    margin-left: auto; /* Asegurar que esté pegado al margen derecho */
 }
 
 .like-button span {
@@ -621,45 +619,57 @@ html {
     }
 }
 
-/* Icono de comentario y caja */
+
+
+
+/* Icono de comentario y caja - Pegado a la izquierda */
 .comment-icon-box {
-    order: 1; /* Mover el ícono de comentario a la izquierda */
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    position: relative; /* Para poder posicionar la caja de comentarios de forma absoluta */
+    margin-right: auto; /* Asegurar que esté pegado al margen izquierdo */
+    gap: 20px;
 }
 
 .comment-icon {
-    background-color: #718c5a;
+    background-color: #fff;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2; /* Asegura que el icono esté por encima de la caja de comentarios */
 }
 
 .comment-box-horizontal {
-    display: none; /* Por defecto, oculto */
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-}
+        display: none; /* Por defecto, oculto */
+        position: fixed; /* Posición fija */
+        top: 75%; /* Ajusta este valor para acercarlo más al ícono */
+        left: 50%; /* Centrado horizontal */
+        transform: translate(-50%, -50%); /* Asegura el centrado perfecto */
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 20px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido dentro del contenedor */
+        width: 250px; /* Ajusta el ancho */
+    }
+    
 
 .comment-box-horizontal textarea {
-    flex: 1;
-    height: 40px;
+    width: 95%; /* Ajusta el ancho para dejar más margen a los lados */
+    height: 80px; /* Aumenta la altura del textarea si es necesario */
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px; /* Bordes redondeados */
     border: 1px solid #ddd;
     resize: none;
     font-size: 14px;
     outline: none; /* Quitar borde azul al hacer clic */
     box-shadow: none;
+    text-align: left; /* Alinea el texto dentro del textarea a la izquierda */
 }
 
 .comment-box-horizontal button {
@@ -667,10 +677,10 @@ html {
     color: white;
     border: none;
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 10px;
+    margin-top: 10px; /* Espacio entre el textarea y el botón */
 }
 
 .comment-box-horizontal button:hover {
@@ -678,16 +688,21 @@ html {
 }
 
 
-/* Estilos para el botón de mostrar comentarios */
+
+
+
+
+/* Estilos para el botón de mostrar comentarios - Centrando */
 .show-comments-container {
-    order: 2; /* El botón "ojo" se mantiene en el centro */
     display: flex;
     align-items: center;
+    justify-content: center; /* Centrar el botón del ojo */
+    margin: 0 auto; /* Asegurar que esté centrado horizontalmente */
 }
 
 #show-comments-button {
-    background-color: #718c5a;
-    color: white;
+    background-color: #fff;
+    color: #718c5a;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -734,4 +749,15 @@ html {
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+body {
+    padding-bottom: 80px; /* Añade un espacio de 100px al final */
+
+}
+
+/* Assegura que hi ha prou espai per a les seccions ancorades */
+#programa, #rsvp, #detalls {
+    scroll-margin-top: 70px; /* Ajusta aquest valor segons l'alçada del menú fixat */
 }
