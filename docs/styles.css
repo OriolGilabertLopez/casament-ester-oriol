@@ -519,6 +519,55 @@ html {
 
 
 
+
+
+
+/* CSS para el contenedor del mapa */
+.map-container {
+    width: 100%; /* El contenedor ocupa el 100% del espacio disponible del contenedor padre */
+    max-width: 350px; /* Limita el ancho máximo a 350px */
+    min-width: 300px; /* Limita el ancho mínimo a 300px */
+    margin: 20px auto; /* Centra el mapa y añade margen superior/inferior */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* El contenido del iframe se mantiene dentro de los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* CSS para el iframe del mapa */
+iframe {
+    width: 100%; /* El iframe ocupa el 100% del ancho del contenedor */
+    height: 300px; /* Establece una altura fija */
+    border: none; /* Elimina el borde por defecto */
+    display: block; /* Asegura que no se trate como un elemento inline */
+    border-radius: 15px; /* Bordes redondeados */
+}
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .map-container {
+        max-width: 700px; /* En pantallas medianas o grandes, el mapa se extiende más */
+    }
+}
+
+@media (min-width: 1024px) {
+    .map-container {
+        max-width: 900px; /* En pantallas grandes, el mapa ocupa más espacio */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Menu Button */
 .menu-link {
     display: inline-block;
@@ -761,3 +810,7 @@ body {
 #programa, #rsvp, #detalls {
     scroll-margin-top: 70px; /* Ajusta aquest valor segons l'alçada del menú fixat */
 }
+
+
+
+
