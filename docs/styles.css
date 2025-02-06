@@ -378,37 +378,55 @@ body {
 
 
 
+#allotjament {
+    background-color: #718c5a; /* Fondo color rosa */
+
+    height: 380px; /* Ajusta el tamaño de la imagen */
+    background-color: rgba(113, 140, 90, 0.4); /* Verde con 50% de transparencia */
+    margin-bottom: 70px; 
+}
+
+
+
 /* Secció de Detalls */
 .detalls {
     display: flex;
     justify-content: space-around;
+    
+    
     /*background-color: #fff;*/
 }
 
 .detall-item {
     text-align: center;
     width: 100%;
+    
+    
 }
 
 .detall-item h2 {
     font-family: 'Amatic SC';
     font-size: 42px;
     color: #718c5a;
+    
 }
 
 .detall-item p {
     font-size: 18px;
     color: #333;
+    
 }
 
 
 .image-container {
     text-align: center; /* Centra la imagen */
+    margin-bottom: 50px;
 }
 
 .image-container img {
     width: 300px; /* Ajusta el tamaño de la imagen */
     height: auto; /* Mantiene las proporciones de la imagen */
+    
 
 }
 
@@ -419,6 +437,7 @@ body {
     color: #333; /* Color del texto */
     margin-top: 50px; /* Ajusta este valor para controlar el espacio superior */
     margin: 25px;
+    
 }
 
 
@@ -439,14 +458,21 @@ body {
 
 .historia h2,
 .menu h2,
-.allotjament h2,
+.allotjament h2 {
+       font-size: 42px;
+       font-family: 'Amatic SC';
+       color: #ffffff;
+       margin-bottom: 20px;
+       margin-top: -30px;
+}
+
 .rsvp h2 {
-    font-size: 36px;
+    font-size: 42px;
+    font-family: 'Amatic SC';
     color: #718c5a;
     margin-bottom: 20px;
     margin-top: -30px;
 }
-
 
 
 
@@ -531,6 +557,7 @@ html {
     border-radius: 15px; /* Bordes redondeados */
     overflow: hidden; /* El contenido del iframe se mantiene dentro de los bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
 }
 
 /* CSS para el iframe del mapa */
@@ -540,6 +567,9 @@ iframe {
     border: none; /* Elimina el borde por defecto */
     display: block; /* Asegura que no se trate como un elemento inline */
     border-radius: 15px; /* Bordes redondeados */
+    background-color: #718c5a; /* Fondo color VERDE */
+    background-color: rgba(113, 140, 90, 0.4); /* Verde con 50% de transparencia */
+    
 }
 /* Estilos responsivos */
 @media (min-width: 768px) {
@@ -601,6 +631,7 @@ html {
     justify-content: space-between; /* Colocar los elementos en los extremos */
     gap: 20px;
     z-index: 1000;
+    
     
 }
 /* Botón de like con corazón - Pegado a la derecha */
@@ -807,7 +838,7 @@ body {
 }
 
 /* Assegura que hi ha prou espai per a les seccions ancorades */
-#programa, #rsvp, #detalls {
+#programa, #rsvp, #detalls #allotjament{
     scroll-margin-top: 70px; /* Ajusta aquest valor segons l'alçada del menú fixat */
 }
 
